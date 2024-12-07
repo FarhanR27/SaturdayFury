@@ -1,0 +1,241 @@
+
+**** 11/29/21 04:38:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "FIRSTTEST.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 1.5uF 
+.OPTIONS ADVCONV
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUIT DEVELOPMENT
+.EXTERNAL OUTPUT VEE
+.EXTERNAL OUTPUT VCC
+X_U1A         N14736 N14743 VCC VEE N16852 TL062/301/TI
+V_V2         N14736 GND  
++SIN 0V 1V 1000 0 0 0
+X_U2         N14824 N14788 VCC VEE N14788 TL071/301/TI
+D_D1         N14743 N16852 D1SS239 
+D_D2         N16852 N14811 D1SS239 
+D_D3         N14811 N14815 D1SS239 
+R_R1         N14815 N14824  10k TC=0,0 
+R_R2         N14811 N14788  10k TC=0,0 
+R_R3         N14743 N14788  100k TC=0,0 
+C_C1         GND N14815  775nf  TC=0,0 
+R_R4         GND N14788  1k TC=0,0 
+V_V3         VCC GND 9V
+V_V4         VEE GND -9V
+
+**** RESUMING FIRSTTEST.cir ****
+.END
+
+**** 11/29/21 04:38:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1SS239         X_U1A.DX        X_U2.DX         
+          IS    5.579000E-09  800.000000E-18  800.000000E-18 
+           N    1.136                                        
+         ISR    1.000000E-09                                 
+          NR    4.99                                         
+         IKF   35.11                                         
+          BV    6                                            
+         IBV  100.000000E-06                                 
+          RS    5.698                                        
+          TT    5.000000E-09                                 
+         CJO  769.200000E-15                                 
+          VJ     .3905                                       
+           M     .1892                                       
+          EG     .69                                         
+         XTI    2                                            
+
+
+**** 11/29/21 04:38:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U2.JX         
+               PJF             PJF             
+         VTO   -1              -1            
+        BETA  100.500000E-06  270.100000E-06 
+          IS   15.000000E-12   15.000000E-12 
+
+Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  GND)-39.07E+06  (  VCC)-39.07E+06  (  VEE)-39.07E+06  (N14736)-39.07E+06     
+
+(N14743)-39.07E+06 (N14788)-39.07E+06 (N14811)-39.07E+06 (N14815)-39.07E+06     
+
+(N14824)-39.07E+06 (N16852)-39.07E+06 (X_U2.6) 287.9E-09 (X_U2.7)-39.07E+06     
+
+(X_U2.8)-39.07E+06 (X_U2.9)    0.0000 (X_U1A.6)-66.47E-06                       
+
+(X_U1A.7)-39.07E+06                   (X_U1A.8)-39.07E+06                       
+
+(X_U1A.9)    0.0000                   (X_U2.10)-39.07E+06                       
+
+(X_U2.11)-39.07E+06                   (X_U2.12)-39.07E+06                       
+
+(X_U2.53)-39.07E+06                   (X_U2.54)-39.07E+06                       
+
+(X_U2.90) 884.9E-06                   (X_U2.91)   25.0000                       
+
+(X_U2.92)  -25.0000                   (X_U2.99)-39.07E+06                       
+
+(X_U1A.10)-39.07E+06                  (X_U1A.11)-39.07E+06                      
+
+(X_U1A.12)-39.07E+06                  (X_U1A.53)-39.07E+06                      
+
+(X_U1A.54)-39.07E+06                  (X_U1A.90)-149.0E-06                      
+
+(X_U1A.91)   15.0000                  (X_U1A.92)  -15.0000                      
+
+(X_U1A.99)-39.07E+06                  
+
+Resuming Simulation with the following settings
+ITL1 = 291
+ITL2 = 171
+
+
+**** 11/29/21 04:38:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  GND)-31.76E+06  (  VCC)-31.76E+06  (  VEE)-31.76E+06  (N14736)-31.76E+06     
+
+(N14743)-31.76E+06 (N14788)-31.76E+06 (N14811)-31.76E+06 (N14815)-31.76E+06     
+
+(N14824)-31.76E+06 (N16852)-31.76E+06 (X_U2.6) 287.9E-09 (X_U2.7)-31.76E+06     
+
+(X_U2.8)-31.76E+06 (X_U2.9)    0.0000 (X_U1A.6)-66.21E-06                       
+
+(X_U1A.7)-31.76E+06                   (X_U1A.8)-31.76E+06                       
+
+(X_U1A.9)    0.0000                   (X_U2.10)-31.76E+06                       
+
+(X_U2.11)-31.76E+06                   (X_U2.12)-31.76E+06                       
+
+(X_U2.53)-31.76E+06                   (X_U2.54)-31.76E+06                       
+
+(X_U2.90)    -.0034                   (X_U2.91)   25.0000                       
+
+(X_U2.92)  -25.0000                   (X_U2.99)-31.76E+06                       
+
+(X_U1A.10)-31.76E+06                  (X_U1A.11)-31.76E+06                      
+
+(X_U1A.12)-31.76E+06                  (X_U1A.53)-31.76E+06                      
+
+(X_U1A.54)-31.76E+06                  (X_U1A.90) 59.60E-06                      
+
+(X_U1A.91)   15.0000                  (X_U1A.92)  -15.0000                      
+
+(X_U1A.99)-31.76E+06                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.921E-11
+    V_V3        -8.767E-03
+    V_V4         8.767E-03
+    X_U1A.VB    -6.624E-10
+    X_U1A.VC     6.759E-12
+    X_U1A.VE     6.843E-12
+    X_U1A.VLIM   5.960E-08
+    X_U1A.VLP   -1.500E-11
+    X_U1A.VLN   -1.500E-11
+    X_U2.VB      2.188E-12
+    X_U2.VC      6.801E-12
+    X_U2.VE      6.800E-12
+    X_U2.VLIM   -3.415E-06
+    X_U2.VLP    -2.500E-11
+    X_U2.VLN    -2.500E-11
+
+    TOTAL POWER DISSIPATION   1.58E-01  WATTS
+
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 291
+ ITL2 = 171
+ ITL4 = 10
+ RELTOL = 0.001
+ ABSTOL = 1e-012
+ VNTOL = 1e-006
+ PIVTOL = 1e-013
+
+**** 11/29/21 04:38:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        1.06
+

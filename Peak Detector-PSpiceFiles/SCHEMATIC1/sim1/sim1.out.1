@@ -1,0 +1,51 @@
+
+**** 11/15/21 19:58:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\SPB_Data\Peak Detector-PSpiceFiles\SCHEMATIC1\sim1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PEAK DETECTOR
+.EXTERNAL OUTPUT VCC
+.EXTERNAL OUTPUT VEE
+X_U1A         N00401 N00411 VCC VEE N00429 TL062/301/TI
+V_V3         N00401 0  
++SIN 0V 1V 1000 0 0 0
+D_D1         N00429 N00411 D1N4148 
+R_R1         0 N00411 100k
+C_C1         0 N00411 Cbreak 470n 
+V_V2         VCC 0 9V
+V_V3         VEE 0 -9V
+
+ERROR(ORPSIM-15089): Can not re-define V_V3. V_V3 is either a system defined variable or has already been defined
+-------------$
+ERROR(ORPSIM-16371): Extra text on line
+
+**** RESUMING sim1.cir ****
+.END
+

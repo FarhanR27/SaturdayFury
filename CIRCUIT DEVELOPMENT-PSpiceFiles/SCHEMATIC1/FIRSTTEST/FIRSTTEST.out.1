@@ -1,0 +1,174 @@
+
+**** 11/29/21 04:32:26 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "FIRSTTEST.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 1.5uF 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUIT DEVELOPMENT
+.EXTERNAL OUTPUT VEE
+.EXTERNAL OUTPUT VCC
+X_U1A         N14736 N14743 VCC VEE N16852 TL062/301/TI
+V_V2         N14736 GND  
++SIN 0V 1V 1000 0 0 0
+X_U2         N14824 N14788 VCC VEE N14788 TL071/301/TI
+D_D1         N14743 N16852 D1SS239 
+D_D2         N16852 N14811 D1SS239 
+D_D3         N14811 N14815 D1SS239 
+R_R1         N14815 N14824  10k TC=0,0 
+R_R2         N14811 N14788  1k TC=0,0 
+R_R3         N14743 N14788  40k TC=0,0 
+C_C1         GND N14815  775nf  TC=0,0 
+R_R4         GND N14788  10k TC=0,0 
+V_V3         VCC GND 9V
+V_V4         VEE GND -9V
+
+**** RESUMING FIRSTTEST.cir ****
+.END
+
+**** 11/29/21 04:32:26 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1SS239         X_U1A.DX        X_U2.DX         
+          IS    5.579000E-09  800.000000E-18  800.000000E-18 
+           N    1.136                                        
+         ISR    1.000000E-09                                 
+          NR    4.99                                         
+         IKF   35.11                                         
+          BV    6                                            
+         IBV  100.000000E-06                                 
+          RS    5.698                                        
+          TT    5.000000E-09                                 
+         CJO  769.200000E-15                                 
+          VJ     .3905                                       
+           M     .1892                                       
+          EG     .69                                         
+         XTI    2                                            
+
+
+**** 11/29/21 04:32:26 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U2.JX         
+               PJF             PJF             
+         VTO   -1              -1            
+        BETA  100.500000E-06  270.100000E-06 
+          IS   15.000000E-12   15.000000E-12 
+
+
+Starting pseudo-transient algorithm.
+
+ERROR(ORPSIM-16550): Floating point computation failed during matrix solution. Possible solutions: 1)Ensure that all device parameters are in valid range. 2)Try using .options LIMIT
+
+INTERNAL ERROR -- Divide by Zero, Divide
+
+ABORTING SIMULATION
+**** 11/29/21 04:32:26 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-FIRSTTEST"  [ C:\SPB_Data\CIRCUIT DEVELOPMENT-PSpiceFiles\SCHEMATIC1\FIRSTTEST.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =          11
+  External (NCNODS)                 =          37
+  Total (NUMNOD)                    =          40
+
+Total device count (NUMEL)          =          67
+  Capacitors (C)                    =           5
+  Diodes (D)                        =          13
+  VCVS (E)                          =           2
+  CCCS (F)                          =           2
+  VCCS (G)                          =           4
+  CCVS (H)                          =           2
+  Current Sources (I)               =           2
+  JFETs (J)                         =           4
+  Resistors (R)                     =          18
+  Voltage Sources (V)               =          15
+
+Number of subcircuits (X)           =           2
+
+Matrix statistics:
+  Matrix size (NSTOP)               =          59
+  Initial no. elements (NTTAR)      =         229
+  No. elements w/ fillin (NTTBR)    =         422
+  No. fillins (IFILL)               =         193
+  No. overflows (NTTOV)             =         149
+  No. LU operations (IOPS)          =         746
+  Percent sparsity (PERSPA)         =      87.877
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =       36110
+  No. rejected time points (NUMRTP) =         190
+  No. iterations (NUMNIT)           =      129132
+
+Load Threads                        =           6
+
+Runtime statistics:                       Seconds      Iterations   Stopped At
+  Matrix load                       =        3.84
+  Matrix solution                   =         .33               4
+  Readin                            =         .03
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  Default algorithm                 =        -.02           -1050
+  Supply stepping                   =         .02               0      100.00%
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .06
+  Total job time (using Solver 1)   =        5.39
+

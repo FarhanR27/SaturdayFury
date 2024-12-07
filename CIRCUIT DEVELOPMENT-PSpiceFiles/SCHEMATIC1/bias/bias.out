@@ -1,0 +1,191 @@
+
+**** 11/29/21 04:41:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUIT DEVELOPMENT
+.EXTERNAL OUTPUT VEE
+.EXTERNAL OUTPUT VCC
+X_U1A         N14736 N14743 VCC VEE N16852 TL062/301/TI
+V_V2         N14736 GND  
++SIN 0V 1V 1000 0 0 0
+X_U2         N14824 N14788 VCC VEE N14788 TL071/301/TI
+D_D1         N14743 N16852 D1SS239 
+D_D2         N16852 N14811 D1SS239 
+D_D3         N14811 N14815 D1SS239 
+R_R1         N14815 N14824  10k TC=0,0 
+R_R2         N14811 N14788  10k TC=0,0 
+R_R3         N14743 N14788  100k TC=0,0 
+C_C1         GND N14815  775nf  TC=0,0 
+R_R4         GND N14788  1k TC=0,0 
+V_V3         VCC GND 9V
+V_V4         VEE GND -9V
+
+**** RESUMING bias.cir ****
+.END
+
+**** 11/29/21 04:41:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1SS239         X_U1A.DX        X_U2.DX         
+          IS    5.579000E-09  800.000000E-18  800.000000E-18 
+           N    1.136                                        
+         ISR    1.000000E-09                                 
+          NR    4.99                                         
+         IKF   35.11                                         
+          BV    6                                            
+         IBV  100.000000E-06                                 
+          RS    5.698                                        
+          TT    5.000000E-09                                 
+         CJO  769.200000E-15                                 
+          VJ     .3905                                       
+           M     .1892                                       
+          EG     .69                                         
+         XTI    2                                            
+
+
+**** 11/29/21 04:41:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U2.JX         
+               PJF             PJF             
+         VTO   -1              -1            
+        BETA  100.500000E-06  270.100000E-06 
+          IS   15.000000E-12   15.000000E-12 
+
+
+Starting pseudo-transient algorithm.
+
+**** 11/29/21 04:41:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  GND) 12.23E+03  (  VCC) 12.24E+03  (  VEE) 12.22E+03  (N14736) 12.23E+03     
+
+(N14743) 12.23E+03 (N14788) 12.23E+03 (N14811) 12.23E+03 (N14815) 12.23E+03     
+
+(N14824) 12.23E+03 (N16852) 12.23E+03 (X_U2.6) 92.89E-09 (X_U2.7) 12.23E+03     
+
+(X_U2.8) 12.23E+03 (X_U2.9)    0.0000 (X_U1A.6) 27.72E-06                       
+
+(X_U1A.7) 12.23E+03                   (X_U1A.8) 12.23E+03                       
+
+(X_U1A.9)    0.0000                   (X_U2.10) 12.23E+03                       
+
+(X_U2.11) 12.22E+03                   (X_U2.12) 12.22E+03                       
+
+(X_U2.53) 12.24E+03                   (X_U2.54) 12.23E+03                       
+
+(X_U2.90)-510.1E-06                   (X_U2.91)   25.0000                       
+
+(X_U2.92)  -25.0000                   (X_U2.99) 12.23E+03                       
+
+(X_U1A.10) 12.23E+03                  (X_U1A.11) 12.22E+03                      
+
+(X_U1A.12) 12.22E+03                  (X_U1A.53) 12.24E+03                      
+
+(X_U1A.54) 12.23E+03                  (X_U1A.90)-7.003E-06                      
+
+(X_U1A.91)   15.0000                  (X_U1A.92)  -15.0000                      
+
+(X_U1A.99) 12.23E+03                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.921E-11
+    V_V3        -8.767E-03
+    V_V4         8.767E-03
+    X_U1A.VB     2.772E-10
+    X_U1A.VC     6.818E-12
+    X_U1A.VE     6.783E-12
+    X_U1A.VLIM  -7.003E-09
+    X_U1A.VLP   -1.500E-11
+    X_U1A.VLN   -1.500E-11
+    X_U2.VB      9.286E-13
+    X_U2.VC      6.801E-12
+    X_U2.VE      6.800E-12
+    X_U2.VLIM   -5.101E-07
+    X_U2.VLP    -2.500E-11
+    X_U2.VLN    -2.500E-11
+
+    TOTAL POWER DISSIPATION   1.58E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/29/21 04:41:40 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        1.63
+

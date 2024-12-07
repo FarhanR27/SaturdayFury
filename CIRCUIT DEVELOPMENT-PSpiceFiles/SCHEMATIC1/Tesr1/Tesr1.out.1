@@ -1,0 +1,203 @@
+
+**** 11/22/21 23:45:14 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Tesr1"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\tesr1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tesr1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 1.5uF 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUIT DEVELOPMENT
+.EXTERNAL OUTPUT VEE
+.EXTERNAL OUTPUT VCC
+X_U1A         N14736 N14743 VCC VEE N14761 TL062/301/TI
+V_V2         N14736 GND  
++SIN 0V 1V 1000 0 0 0
+X_U2         N14824 N14786 VCC VEE N14861 TL071/301/TI
+D_D1         N14743 N14761 D1SS239 
+D_D2         N14761 N14811 D1SS239 
+D_D3         N14811 N14815 D1SS239 
+R_R1         N14815 N14824  10K TC=0,0 
+R_R2         N14811 N14861  1K TC=0,0 
+R_R3         N14743 N14786  40K TC=0,0 
+C_C1         GND N14815  750nF  TC=0,0 
+R_R4         GND N14861  10K TC=0,0 
+V_V3         VCC GND 9V
+V_V4         VEE GND -9V
+
+**** RESUMING Tesr1.cir ****
+.END
+
+**** 11/22/21 23:45:14 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Tesr1"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\tesr1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1SS239         X_U1A.DX        X_U2.DX         
+          IS    5.579000E-09  800.000000E-18  800.000000E-18 
+           N    1.136                                        
+         ISR    1.000000E-09                                 
+          NR    4.99                                         
+         IKF   35.11                                         
+          BV    6                                            
+         IBV  100.000000E-06                                 
+          RS    5.698                                        
+          TT    5.000000E-09                                 
+         CJO  769.200000E-15                                 
+          VJ     .3905                                       
+           M     .1892                                       
+          EG     .69                                         
+         XTI    2                                            
+
+
+**** 11/22/21 23:45:14 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Tesr1"  [ C:\SPB_Data\circuit development-pspicefiles\schematic1\tesr1.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U2.JX         
+               PJF             PJF             
+         VTO   -1              -1            
+        BETA  100.500000E-06  270.100000E-06 
+          IS   15.000000E-12   15.000000E-12 
+
+
+Starting pseudo-transient algorithm.
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  GND) 44.23E+06  (  VCC) 44.23E+06  (  VEE) 44.23E+06  (N14736) 44.23E+06     
+
+(N14743) 44.23E+06 (N14761) 44.23E+06 (N14786) 44.23E+06 (N14811) 44.23E+06     
+
+(N14815) 44.23E+06 (N14824) 44.23E+06 (N14861) 44.23E+06 (X_U2.6)-340.6E-06     
+
+(X_U2.7) 44.23E+06 (X_U2.8) 44.23E+06 (X_U2.9)    0.0000 (X_U1A.6)   14.7910    
+
+(X_U1A.7) 44.23E+06                   (X_U1A.8) 44.23E+06                       
+
+(X_U1A.9)    0.0000                   (X_U2.10) 44.23E+06                       
+
+(X_U2.11) 44.23E+06                   (X_U2.12) 44.23E+06                       
+
+(X_U2.53) 44.23E+06                   (X_U2.54) 44.23E+06                       
+
+(X_U2.90)    2.9907                   (X_U2.91)   25.0000                       
+
+(X_U2.92)  -25.0000                   (X_U2.99) 44.23E+06                       
+
+(X_U1A.10) 44.23E+06                  (X_U1A.11) 44.23E+06                      
+
+(X_U1A.12) 44.23E+06                  (X_U1A.53) 44.23E+06                      
+
+(X_U1A.54) 44.23E+06                  (X_U1A.90)   -3.0002                      
+
+(X_U1A.91)   15.0000                  (X_U1A.92)  -15.0000                      
+
+(X_U1A.99) 44.23E+06                  
+
+
+  These voltages failed to converge:
+
+    V(N14736)                 =   -10.00GV  \    44.23MV
+    V(GND)                    =   -10.00GV  \    44.23MV
+    V(N14743)                 =   -10.00GV  \    44.23MV
+    V(N14761)                 =   -10.00GV  \    44.23MV
+    V(N14811)                 =   -10.00GV  \    44.23MV
+    V(N14815)                 =   -10.00GV  \    44.23MV
+    V(N14824)                 =   -10.00GV  \    44.23MV
+    V(N14861)                 =   -10.00GV  \    44.23MV
+    V(N14786)                 =   -10.00GV  \    44.23MV
+    V(VCC)                    =   -10.00GV  \    44.23MV
+    V(VEE)                    =   -10.00GV  \    44.23MV
+    V(X_U1A.11)               =   -10.00GV  \    44.23MV
+    V(X_U1A.12)               =   -10.00GV  \    44.23MV
+    V(X_U1A.6)                =   966.17mV  \     14.79V
+    V(X_U1A.7)                =   -10.00GV  \    44.23MV
+    V(X_U1A.53)               =   -10.00GV  \    44.23MV
+    V(X_U1A.54)               =   -10.00GV  \    44.23MV
+    V(X_U1A.90)               =    -4.213V  \    -3.000V
+    V(X_U1A.99)               =   -10.00GV  \    44.23MV
+    V(X_U1A.10)               =   -10.00GV  \    44.23MV
+    V(X_U1A.8)                =   -10.00GV  \    44.23MV
+    V(X_U2.11)                =   -10.00GV  \    44.23MV
+    V(X_U2.12)                =   -10.00GV  \    44.23MV
+    V(X_U2.6)                 =   -18.03mV  \  -340.60uV
+    V(X_U2.7)                 =   -10.00GV  \    44.23MV
+    V(X_U2.53)                =   -10.00GV  \    44.23MV
+    V(X_U2.54)                =   -10.00GV  \    44.23MV
+    V(X_U2.90)                =     4.231V  \     2.991V
+    V(X_U2.99)                =   -10.00GV  \    44.23MV
+    V(X_U2.10)                =   -10.00GV  \    44.23MV
+    V(X_U2.8)                 =   -10.00GV  \    44.23MV
+
+  These supply currents failed to converge:
+
+    I(X_U1A.EGND)             =    4.272mA  \    2.796mA
+    I(X_U2.EGND)              =   -4.041mA  \   -3.201mA
+    I(V_V2)                   =   197.03pA  \   -46.74pA
+    I(V_V4)                   =    8.502mA  \    8.620mA
+    I(X_U1A.VB)               =     9.82uA  \   147.91uA
+    I(X_U1A.VE)               =   -10.26uA  \  -156.79uA
+    I(X_U1A.VLIM)             =   -4.213mA  \   -3.000mA
+    I(X_U1A.VLP)              =   -19.21pA  \   -18.00pA
+    I(X_U1A.VLN)              =   -10.79pA  \   -12.00pA
+    I(X_U2.VB)                =   -5.556nA  \   -3.405nA
+    I(X_U2.VC)                =    4.152pA  \    5.335pA
+    I(X_U2.VE)                =    9.449pA  \    8.274pA
+    I(X_U2.VLIM)              =    4.231mA  \    2.991mA
+    I(X_U2.VLP)               =   -20.76pA  \   -22.01pA
+    I(X_U2.VLN)               =   -29.24pA  \   -27.99pA
+    I(X_U1A.HLIM)             =    8.427pA  \    6.000pA
+    I(X_U2.HLIM)              =   -8.462pA  \   -5.982pA
+
+  These devices failed to converge:
+    D_D1      D_D2      D_D3      X_U1A.DE  X_U1A.FB  X_U2.FB   X_U1A.J1  
+    X_U2.J1   
+
+**** Interrupt ****
